@@ -2,6 +2,7 @@ package de.guehring.footballserver.league;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,15 +15,37 @@ public class LeagueService {
         this.leagueRepository = leagueRepository;
     }
 
-    public List<League> getAllLeagues() {
-        return leagueRepository.findAll();
+    public List<LeagueDTO> getAllLeagues() {
+        List<League> leagues = leagueRepository.findAll();
+        List<LeagueDTO> leagueDTOs = new ArrayList<>();
+        for (League league : leagues) {
+            LeagueDTO leagueDTO = new LeagueDTO();
+            leagueDTO.setId(league.getId());
+            leagueDTO.setLeagueName(league.getLeagueName());
+            leagueDTOs.add(leagueDTO);
+        }
+        return leagueDTOs;
     }
 
-    public League getLeagueById(int id) {
-        return leagueRepository.findById(id).orElse(null);
+    public LeagueDTO getLeagueById(int id) {
+        League league = leagueRepository.findById(id).orElse(null);
+        if (league != null) {
+            LeagueDTO leagueDTO = new LeagueDTO();
+            leagueDTO.setId(league.getId());
+            leagueDTO.setLeagueName(league.getLeagueName());
+            return leagueDTO;
+        }
+        return null;
     }
 
-    public League getLeagueByName(String leagueName) {
-        return leagueRepository.findByLeagueName(leagueName).orElse(null);
+    public LeagueDTO getLeagueByName(String leagueName) {
+        League league = leagueRepository.findByLeagueName(leagueName).orElse(null);
+        if (league != null) {
+            LeagueDTO leagueDTO = new LeagueDTO();
+            leagueDTO.setId(league.getId());
+            leagueDTO.setLeagueName(league.getLeagueName());
+            return leagueDTO;
+        }
+        return null;
     }
 }

@@ -24,7 +24,7 @@ public class LeagueController {
         return leagueService.getLeagueById(id);
     }
 
-    @GetMapping()
+    @GetMapping("/name")
     public LeagueDTO getLeagueByName(@RequestParam String leagueName) {
         return leagueService.getLeagueByName(leagueName);
     }

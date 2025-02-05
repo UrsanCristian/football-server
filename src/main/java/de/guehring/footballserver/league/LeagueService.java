@@ -59,4 +59,8 @@ public class LeagueService {
 
         saveLeague(newLeague);
     }
+
+    public League getLeagueEntityById(int id) {
+        return leagueRepository.findById(id).orElse(null);
+    }
 }

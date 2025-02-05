@@ -1,10 +1,8 @@
 package de.guehring.footballserver.team;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import de.guehring.footballserver.league.League;
+import jakarta.persistence.*;
 
 @Entity
 public class Team {
@@ -16,19 +14,48 @@ public class Team {
 
     private String country;
 
+    @ManyToOne
+    private League league;
+
     public Team(int id, String teamName, String country) {
         this.id = id;
         this.teamName = teamName;
         this.country = country;
 
     }
+
     public Team() {
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getTeamName() { return teamName;}
-    public void setTeamName(String teamName) {this.teamName = teamName;}
-    public String getCountry() {return country; }
-    public void setCountry(String country) {this.country = country;}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public League getLeague() {
+        return league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
+    }
 }

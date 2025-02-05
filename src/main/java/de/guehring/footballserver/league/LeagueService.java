@@ -48,4 +48,15 @@ public class LeagueService {
         }
         return null;
     }
+
+    public void saveLeague(League league) {
+        leagueRepository.save(league);
+    }
+
+    public void createNewLeague(LeagueDTO leagueDTO) {
+        League newLeague = new League();
+        newLeague.setLeagueName(leagueDTO.getLeagueName());
+
+        saveLeague(newLeague);
+    }
 }

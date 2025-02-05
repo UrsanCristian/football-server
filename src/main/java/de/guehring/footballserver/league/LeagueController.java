@@ -28,4 +28,10 @@ public class LeagueController {
     public LeagueDTO getLeagueByName(@RequestParam String leagueName) {
         return leagueService.getLeagueByName(leagueName);
     }
+
+    @PostMapping()
+    public String createNewLeague(@RequestBody LeagueDTO leagueDTO) {
+        leagueService.createNewLeague(leagueDTO);
+        return "New league created";
+    }
 }

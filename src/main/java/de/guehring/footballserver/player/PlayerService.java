@@ -47,7 +47,7 @@ public class PlayerService {
         savePlayer(newPlayer);
     }
 
-    public Player getPlayerEtityById(int id) {
+    public Player getPlayerEntityById(int id) {
         return playerRepository.findById(id).orElse(null);
     }
 }

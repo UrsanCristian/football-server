@@ -1,6 +1,7 @@
 package de.guehring.footballserver.team;
 
 
+import de.guehring.footballserver.league.League;
 import de.guehring.footballserver.league.LeagueService;
 import org.springframework.stereotype.Service;
 
@@ -88,6 +89,9 @@ public class TeamService {
         newTeam.setCountry(teamDTO.getCountry());
         newTeam.setLeague(leagueService.getLeagueEntityById(teamDTO.getLeagueId()));
         saveTeam(newTeam);
+    }
+    public Team getTeamEntityById(int id){
+        return teamRepository.findById(id).orElse(null);
     }
 }
 

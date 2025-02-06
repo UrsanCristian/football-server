@@ -10,9 +10,7 @@ import java.util.List;
 public class GameController {
     private final GameService gameService;
 
-    public.
-
-    GameController(GameService gameService) {
+    public GameController(GameService gameService) {
         this.gameService = gameService;
     }
 
@@ -23,12 +21,12 @@ public class GameController {
 
     @GetMapping("/{id}")
     public GameDTO getGameById(@PathVariable int id) {
-        return playerService.getGameById(id);
+        return gameService.getGameById(id);
     }
 
     @GetMapping
     public String createNewGame(@RequestParam GameDTO gameDTO) {
-        gameService.createNewGame(GameDTO);
+        gameService.createNewGame(gameDTO);
         return "New Game created";
     }
 }

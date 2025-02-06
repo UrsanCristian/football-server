@@ -1,4 +1,9 @@
 package de.guehring.footballserver.game;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface GameRepository {
+import java.util.List;
+
+@Repository
+public interface GameRepository extends JpaRepository<Game, Integer> {
 }

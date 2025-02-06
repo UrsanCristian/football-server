@@ -4,6 +4,8 @@ package de.guehring.footballserver.player;
 import de.guehring.footballserver.team.TeamService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/players")
 public class PlayerController {
@@ -16,12 +18,12 @@ public class PlayerController {
 
     @GetMapping
     public List<PlayerDTO> getPlayer(){
-        return playerService.getAllPlayer();
+        return playerService.getAllPlayers();
     }
 
     @GetMapping("/{id}")
     public PlayerDTO getPlayerById(@PathVariable int id){
-        return playerService.getPlayerById();
+        return playerService.getPlayerById(id);
     }
     @PostMapping
     public String createNewPlayer(@RequestBody PlayerDTO playerDTO){

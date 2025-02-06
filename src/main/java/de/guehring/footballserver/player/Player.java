@@ -1,5 +1,6 @@
 package de.guehring.footballserver.player;
 
+import de.guehring.footballserver.team.Team;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -19,13 +20,17 @@ public class Player {
 
     private String position;
 
+    @ManyToOne
+    private Team team;
 
-    public Player(int id, String playerName, String surname, Timestamp birthdate, String position) {
+
+    public Player(int id, String playerName, String surname, Timestamp birthdate, String position, Team team) {
         this.id = id;
         this.playerName = playerName;
         this.surname = surname;
         this.birthdate = birthdate;
         this.position = position;
+        this.team = team;
 
     }
 
@@ -63,11 +68,20 @@ public class Player {
     public void setBirthdate(Timestamp birthdate) {
         this.birthdate = birthdate;
     }
-    public String getPosition(){
+
+    public String getPosition() {
         return position;
     }
-    public void setPosition(String position){
+
+    public void setPosition(String position) {
         this.position = position;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }

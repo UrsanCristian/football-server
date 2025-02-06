@@ -1,5 +1,6 @@
 package de.guehring.footballserver.player;
 
+import de.guehring.footballserver.team.Team;
 import de.guehring.footballserver.team.TeamDTO;
 import lombok.Data;
 
@@ -12,6 +13,7 @@ public class PlayerDTO
     private String surname;
     private Timestamp birthdate;
     private String position;
+    private int teamId;
 }
 
 

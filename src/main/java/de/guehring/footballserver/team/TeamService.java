@@ -29,6 +29,7 @@ public class TeamService {
             teamDTO.setTeamName(team.getTeamName());
             teamDTO.setCountry(team.getCountry());
             teamDTO.setLeagueId(team.getLeague().getId());
+            teamDTO.setPoints(team.getPoints());
             teamDTOs.add(teamDTO);
         }
         return teamDTOs;
@@ -42,6 +43,7 @@ public class TeamService {
             teamDTO.setTeamName(team.getTeamName());
             teamDTO.setCountry(team.getCountry());
             teamDTO.setLeagueId(team.getLeague().getId());
+            teamDTO.setPoints(team.getPoints());
             return teamDTO;
 
         }
@@ -57,6 +59,7 @@ public class TeamService {
             teamDTO.setTeamName(team.getTeamName());
             teamDTO.setCountry(team.getCountry());
             teamDTO.setLeagueId(team.getLeague().getId());
+            teamDTO.setPoints(team.getPoints());
             return teamDTO;
 
         }
@@ -74,6 +77,7 @@ public class TeamService {
             teamDTO.setTeamName(team.getTeamName());
             teamDTO.setCountry(team.getCountry());
             teamDTO.setLeagueId(team.getLeague().getId());
+            teamDTO.setPoints(team.getPoints());
             teamDTOs.add(teamDTO);
         }
         return teamDTOs;

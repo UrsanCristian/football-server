@@ -5,11 +5,13 @@ public class TeamDTO {
     private String teamName;
     private String country;
     private int leagueId;
+    private int points;
 
-    public TeamDTO(int id, String teamName, String country) {
+    public TeamDTO(int id, String teamName, String country, int points) {
         this.id = id;
         this.teamName = teamName;
         this.country = country;
+        this.points = points;
     }
 
     public TeamDTO() {
@@ -46,6 +48,14 @@ public class TeamDTO {
 
     public void setLeagueId(int leagueId) {
         this.leagueId = leagueId;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
 

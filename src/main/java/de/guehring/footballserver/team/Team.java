@@ -14,6 +14,8 @@ public class Team {
 
     private String country;
 
+    private int points;
+
     @ManyToOne
     private League league;
 
@@ -21,6 +23,7 @@ public class Team {
         this.id = id;
         this.teamName = teamName;
         this.country = country;
+        this.points = 0;
 
     }
 
@@ -57,5 +60,13 @@ public class Team {
 
     public void setLeague(League league) {
         this.league = league;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }

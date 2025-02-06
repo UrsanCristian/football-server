@@ -24,7 +24,7 @@ public class GameController {
         return gameService.getGameById(id);
     }
 
-    @GetMapping
+    @PostMapping
     public String createNewGame(@RequestParam GameDTO gameDTO) {
         gameService.createNewGame(gameDTO);
         return "New Game created";

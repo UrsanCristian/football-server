@@ -3,7 +3,7 @@ package de.guehring.footballserver.player;
 import de.guehring.footballserver.team.Team;
 import jakarta.persistence.*;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 
 @Entity
@@ -16,7 +16,7 @@ public class Player {
 
     private String surname;
 
-    private Timestamp birthdate;
+    private LocalDate birthdate;
 
     private String position;
 
@@ -24,7 +24,7 @@ public class Player {
     private Team team;
 
 
-    public Player(int id, String playerName, String surname, Timestamp birthdate, String position, Team team) {
+    public Player(int id, String playerName, String surname, LocalDate birthdate, String position, Team team) {
         this.id = id;
         this.playerName = playerName;
         this.surname = surname;
@@ -61,11 +61,11 @@ public class Player {
         this.surname = surname;
     }
 
-    public Timestamp getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Timestamp birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

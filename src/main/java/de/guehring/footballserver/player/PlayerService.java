@@ -1,5 +1,6 @@
 package de.guehring.footballserver.player;
 
+import de.guehring.footballserver.team.TeamService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,9 +9,11 @@ import java.util.List;
 @Service
 public class PlayerService {
     private final PlayerRepository playerRepository;
+    private final TeamService teamService;
 
-    public PlayerService(PlayerRepository playerRepository) {
+    public PlayerService(PlayerRepository playerRepository, TeamService teamService) {
         this.playerRepository = playerRepository;
+        this.teamService = teamService;
     }
 
     public List<PlayerDTO> getAllPlayers() {
@@ -43,6 +46,10 @@ public class PlayerService {
     public void createNewPlayer(PlayerDTO playerDTO) {
         Player newPlayer = new Player();
         newPlayer.setPlayerName(playerDTO.getPlayerName());
+        newPlayer.setBirthdate(playerDTO.getBirthdate());
+        newPlayer.setPosition(playerDTO.getPosition());
+        newPlayer.setSurname(playerDTO.getSurname());
+        newPlayer.setTeam(teamService.getTeamEntityById(playerDTO.getId()));
 
         savePlayer(newPlayer);
     }

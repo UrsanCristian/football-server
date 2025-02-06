@@ -11,22 +11,22 @@ import java.util.List;
 public class PlayerController {
     private final PlayerService playerService;
 
-    public PlayerController(PlayerService playerService){
-        this.playerService =playerService;
-
+    public PlayerController(PlayerService playerService) {
+        this.playerService = playerService;
     }
 
     @GetMapping
-    public List<PlayerDTO> getPlayer(){
+    public List<PlayerDTO> getPlayer() {
         return playerService.getAllPlayers();
     }
 
     @GetMapping("/{id}")
-    public PlayerDTO getPlayerById(@PathVariable int id){
+    public PlayerDTO getPlayerById(@PathVariable int id) {
         return playerService.getPlayerById(id);
     }
+
     @PostMapping
-    public String createNewPlayer(@RequestBody PlayerDTO playerDTO){
+    public String createNewPlayer(@RequestBody PlayerDTO playerDTO) {
         playerService.createNewPlayer(playerDTO);
         return "New player created";
     }

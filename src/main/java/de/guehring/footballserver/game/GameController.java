@@ -25,7 +25,7 @@ public class GameController {
     }
 
     @PostMapping
-    public String createNewGame(@RequestParam GameDTO gameDTO) {
+    public String createNewGame(@RequestBody GameDTO gameDTO) {
         gameService.createNewGame(gameDTO);
         return "New Game created";
     }

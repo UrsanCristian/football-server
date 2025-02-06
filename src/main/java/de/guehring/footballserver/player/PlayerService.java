@@ -23,6 +23,10 @@ public class PlayerService {
             PlayerDTO playerDTO = new PlayerDTO();
             playerDTO.setId(player.getId());
             playerDTO.setPlayerName(player.getPlayerName());
+            playerDTO.setSurname(player.getSurname());
+            playerDTO.setBirthdate(player.getBirthdate());
+            playerDTO.setTeamId(player.getTeam().getId());
+            playerDTO.setPosition(player.getPosition());
             playerDTOS.add(playerDTO);
         }
         return playerDTOS;
@@ -34,6 +38,10 @@ public class PlayerService {
             PlayerDTO playerDTO = new PlayerDTO();
             playerDTO.setId(player.getId());
             playerDTO.setPlayerName(player.getPlayerName());
+            playerDTO.setSurname(player.getSurname());
+            playerDTO.setBirthdate(player.getBirthdate());
+            playerDTO.setTeamId(player.getTeam().getId());
+            playerDTO.setPosition(player.getPosition());
             return playerDTO;
         }
         return null;
@@ -49,7 +57,7 @@ public class PlayerService {
         newPlayer.setBirthdate(playerDTO.getBirthdate());
         newPlayer.setPosition(playerDTO.getPosition());
         newPlayer.setSurname(playerDTO.getSurname());
-        newPlayer.setTeam(teamService.getTeamEntityById(playerDTO.getId()));
+        newPlayer.setTeam(teamService.getTeamEntityById(playerDTO.getTeamId()));
 
         savePlayer(newPlayer);
     }

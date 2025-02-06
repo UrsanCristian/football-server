@@ -90,7 +90,8 @@ public class TeamService {
         newTeam.setLeague(leagueService.getLeagueEntityById(teamDTO.getLeagueId()));
         saveTeam(newTeam);
     }
-    public Team getTeamEntityById(int id){
+
+    public Team getTeamEntityById(int id) {
         return teamRepository.findById(id).orElse(null);
     }
 }

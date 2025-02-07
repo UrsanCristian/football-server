@@ -6,12 +6,15 @@ public class TeamDTO {
     private String country;
     private int leagueId;
     private int points;
+    private String teamUrl;
 
-    public TeamDTO(int id, String teamName, String country, int points) {
+
+    public TeamDTO(int id, String teamName, String country, int points, String teamUrl) {
         this.id = id;
         this.teamName = teamName;
         this.country = country;
         this.points = points;
+        this.teamUrl = teamUrl;
     }
 
     public TeamDTO() {
@@ -56,6 +59,14 @@ public class TeamDTO {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public String getTeamUrl() {
+        return teamUrl;
+    }
+
+    public void setTeamUrl(String teamUrl) {
+        this.teamUrl = teamUrl;
     }
 }
 

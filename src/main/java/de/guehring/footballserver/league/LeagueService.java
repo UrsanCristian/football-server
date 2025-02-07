@@ -22,6 +22,7 @@ public class LeagueService {
             LeagueDTO leagueDTO = new LeagueDTO();
             leagueDTO.setId(league.getId());
             leagueDTO.setLeagueName(league.getLeagueName());
+            leagueDTO.setLeagueUrl(league.getLeagueUrl());
             leagueDTOs.add(leagueDTO);
         }
         return leagueDTOs;
@@ -32,6 +33,7 @@ public class LeagueService {
         if (league != null) {
             LeagueDTO leagueDTO = new LeagueDTO();
             leagueDTO.setId(league.getId());
+            leagueDTO.setLeagueUrl(league.getLeagueUrl());
             leagueDTO.setLeagueName(league.getLeagueName());
             return leagueDTO;
         }
@@ -64,3 +66,7 @@ public class LeagueService {
         return leagueRepository.findById(id).orElse(null);
     }
 }
+
+
+
+

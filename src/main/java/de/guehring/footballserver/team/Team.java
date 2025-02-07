@@ -16,14 +16,17 @@ public class Team {
 
     private int points;
 
+    private String teamUrl;
+
     @ManyToOne
     private League league;
 
-    public Team(int id, String teamName, String country) {
+    public Team(int id, String teamName, String country, String teamUrl) {
         this.id = id;
         this.teamName = teamName;
         this.country = country;
         this.points = 0;
+        this.teamUrl = teamUrl;
 
     }
 
@@ -68,5 +71,13 @@ public class Team {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public String getTeamUrl() {
+        return teamUrl;
+    }
+
+    public void setTeamUrl(String teamUrl) {
+        this.teamUrl = teamUrl;
     }
 }

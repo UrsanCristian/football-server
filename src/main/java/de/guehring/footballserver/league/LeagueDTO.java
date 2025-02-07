@@ -4,10 +4,13 @@ public class LeagueDTO {
 
     private int id;
     private String leagueName;
+    private String leagueUrl;
 
-    public LeagueDTO(int id, String leagueName) {
+
+    public LeagueDTO(int id, String leagueName, String leagueUrl) {
         this.id = id;
         this.leagueName = leagueName;
+        this.leagueUrl = leagueUrl;
     }
 
     public LeagueDTO() {
@@ -27,5 +30,13 @@ public class LeagueDTO {
 
     public void setLeagueName(String leagueName) {
         this.leagueName = leagueName;
+    }
+
+    public String getLeagueUrl() {
+        return leagueUrl;
+    }
+
+    public void setLeagueUrl(String leagueUrl) {
+        this.leagueUrl = leagueUrl;
     }
 }
